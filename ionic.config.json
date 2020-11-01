@@ -1,0 +1,7 @@
+{
+  "name": "ok-bbbb",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

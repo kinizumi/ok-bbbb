@@ -1,17 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<!--<ion-header [translucent]="true">-->
+<!--<ion-toolbar>-->
+<!--<ion-title>-->
+<!--Tab 1-->
+<!--</ion-title>-->
+<!--</ion-toolbar>-->
+<!--</ion-header>-->
+<!--<ion-content [fullscreen]="true">-->
+<!--<ion-header collapse="condense">-->
+<!--<ion-toolbar>-->
+<!--<ion-title size="large">Tab 1</ion-title>-->
+<!--</ion-toolbar>-->
+<!--</ion-header>-->
+<!--<app-explore-container name="Tab 1 page"></app-explore-container>-->
+<!--</ion-content>-->
+<ion-header>
+  <ion-toolbar color="warning">
     <ion-title>
-      Tab 1
+      Most recent
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content padding>
+  <br>
+  <ion-progress-bar *ngIf="loading === true" type="indeterminate"></ion-progress-bar>
+  <ion-card *ngFor="let item of getKeys(thumbs)">
+    <ion-card-header>
+      <ion-card-title>
+        {{thumbs.get(item).title}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div [innerHTML]="thumbs.get(item).content"></div>
+    </ion-card-content>
+  </ion-card>
+  <ion-button onclick="window.open('https://okbbbb.com', '_system', 'location=yes'); return false;">Load more
+  </ion-button>
 </ion-content>

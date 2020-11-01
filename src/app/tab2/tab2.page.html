@@ -1,17 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="warning">
     <ion-title>
-      Tab 2
+      Categories
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content padding>
+  <br>
+  <ion-progress-bar *ngIf="loading === true" type="indeterminate"></ion-progress-bar>
+  <ion-list>
+    <ion-item *ngFor="let item of getKeys(cats)" [queryParams]="{name: cats.get(item).name}"
+              [routerLink]="['/tabs/tab4/category/'+ cats.get(item).slug]" detail>
+      <ion-label style="margin-left:1em">
+        <h2>{{cats.get(item).name}}</h2>
+        <p>{{cats.get(item).post_count}} items</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button onclick="window.open('https://okbbbb.com', '_system', 'location=yes'); return false;">Load more
+  </ion-button>
 </ion-content>

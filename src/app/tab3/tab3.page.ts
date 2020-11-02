@@ -14,7 +14,7 @@ export class Tab3Page implements OnInit {
   searchStr: string;
   page: number;
   loaded: boolean;
-  searching: boolean;
+  searching = false;
 
   constructor(private wordpressService: WordpressService,
               private route: ActivatedRoute) {
@@ -26,9 +26,9 @@ export class Tab3Page implements OnInit {
   }
 
   loadPosts() {
-    this.searching = true;
     this.categoryName = this.route.snapshot.paramMap.get('id');
-    if (this.searchStr !== undefined) {
+    if (this.searchStr) {
+      this.searching = true;
       this.wordpressService.search(this.searchStr, this.page).subscribe(data => {
         this.items = data;
         for (const res of data) {
@@ -50,7 +50,6 @@ export class Tab3Page implements OnInit {
   }
 
   ngOnInit() {
-    this.searching = false;
     this.page = 1;
     this.loadPosts();
   }

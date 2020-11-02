@@ -10,6 +10,24 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  public selectedIndex = 0;
+  public appPages = [
+    {
+      title: 'Market',
+      url: 'https://okbbbb.com/adverts/',
+      icon: 'send'
+    },
+    {
+      title: 'Q & A',
+      url: 'https://okbbbb.com/?show=recent-questions',
+      icon: 'text'
+    },
+    {
+      title: 'Contact',
+      url: 'https://okbbbb.com/contact-us/',
+      icon: 'people'
+    }
+  ];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -23,5 +41,8 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+  navi(url){
+    window.open(url);
   }
 }

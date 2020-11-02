@@ -31,6 +31,9 @@ export class Tab1Page implements OnInit {
       }
       this.loading = false;
       this.loaded = true;
+    }, err => {
+      this.loading = false;
+      this.loaded = false;
     });
   }
 

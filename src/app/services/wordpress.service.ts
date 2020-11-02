@@ -18,8 +18,8 @@ export class WordpressService {
       return this.http.get(this.mainUrl + 'posts/?status=publish&categories=' + categoryName + '&page=' + page);
   }
 
-  public getCategories(): any {
-      return this.http.get(this.mainUrl + 'categories?order_by=count&order=desc');
+  public getCategories(page: number): any {
+      return this.http.get(this.mainUrl + 'categories?order_by=count&order=desc&page=' + page);
   }
 
   public search(searchStr: string, page: number): any {

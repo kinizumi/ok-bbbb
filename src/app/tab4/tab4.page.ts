@@ -40,7 +40,7 @@ export class Tab4Page implements OnInit {
   }
 
   goTo(str: string) {
-    this.router.navigate(['/tabs/post/' + str]);
+    this.router.navigate(['/tabs/tab5/post/' + str]);
   }
 
   goBack() {
@@ -65,6 +65,9 @@ export class Tab4Page implements OnInit {
       }
       this.loading = false;
       this.loaded = true;
+    }, err => {
+      this.loading = false;
+      this.loaded = false;
     });
   }
 

@@ -7,7 +7,7 @@
 </ion-header>
 <ion-content padding>
   <br>
-  <ion-progress-bar *ngIf="loading === true" type="indeterminate"></ion-progress-bar>
+  <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
   <ion-list>
     <ion-item *ngFor="let item of getKeys(cats)" [queryParams]="{name: cats.get(item).name}"
               [routerLink]="['/tabs/tab4/category/'+ cats.get(item).slug]" detail>
@@ -17,6 +17,8 @@
       </ion-label>
     </ion-item>
   </ion-list>
-  <ion-button onclick="window.open('https://okbbbb.com', '_system', 'location=yes'); return false;">Load more
-  </ion-button>
+  <!--<ion-button onclick="window.open('https://okbbbb.com', '_system', 'location=yes'); return false;">-->
+    <!--Read more-->
+  <!--</ion-button>-->
+  <ion-button *ngIf="loaded" (click)="next()">Load more</ion-button>
 </ion-content>

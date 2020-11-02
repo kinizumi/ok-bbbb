@@ -4,8 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { Tab5Page } from './tab5.page';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'post/:id', pathMatch: 'full' },
   {
-    path: '',
+    path: 'post/:id',
     component: Tab5Page
   }
 ];

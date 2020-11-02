@@ -1,9 +1,18 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>tab5</ion-title>
+  <ion-toolbar color="warning">
+    <ion-button (click)="goBack()" slot="start">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title>
+      {{title}}
+    </ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-
+<ion-content padding>
+  <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
+  <ion-card style="width:100%">
+    <ion-card-content>
+      <div [innerHTML]="content"></div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

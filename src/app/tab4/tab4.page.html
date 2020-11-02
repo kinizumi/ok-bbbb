@@ -10,13 +10,15 @@
 </ion-header>
 <ion-content padding>
   <br>
-  <ion-progress-bar *ngIf="loading === true" type="indeterminate"></ion-progress-bar>
+  <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
   <ion-card style="padding:0.5em;" *ngFor="let item of getKeys(thumbs)" (click)="goTo(thumbs.get(item).id)">
     <!--<ion-img [src]="thumbs.get(item).imageUrl"></ion-img>-->
     <ion-card-subtitle [innerHTML]="thumbs.get(item).title">
     </ion-card-subtitle>
     <ion-label [innerHTML]="thumbs.get(item).excerpt"></ion-label>
   </ion-card>
-  <ion-button onclick="window.open('https://okbbbb.com', '_system', 'location=yes'); return false;">Load more
-  </ion-button>
+  <!--<ion-button onclick="window.open('https://okbbbb.com', '_system', 'location=yes'); return false;">-->
+    <!--Read more-->
+  <!--</ion-button>-->
+  <ion-button *ngIf="loaded == true" (click)="next()">Load more</ion-button>
 </ion-content>

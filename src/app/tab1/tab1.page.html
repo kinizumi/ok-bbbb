@@ -22,7 +22,7 @@
 </ion-header>
 <ion-content padding>
   <br>
-  <ion-progress-bar *ngIf="loading === true" type="indeterminate"></ion-progress-bar>
+  <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
   <ion-card *ngFor="let item of getKeys(thumbs)">
     <ion-card-header>
       <ion-card-title>
@@ -33,6 +33,7 @@
       <div [innerHTML]="thumbs.get(item).content"></div>
     </ion-card-content>
   </ion-card>
-  <ion-button onclick="window.open('https://okbbbb.com', '_system', 'location=yes'); return false;">Load more
+  <ion-button onclick="window.open('https://okbbbb.com', '_system', 'location=yes'); return false;">
+    Read more
   </ion-button>
 </ion-content>

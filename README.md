@@ -1,4 +1,7 @@
 # ok-bbbb
+
+<img src="https://okbbbb.com/wp-content/uploads/2020/10/okbbbb-green.png" />
+
 ionic 5 with latest dependencies + (capacitor) + (angualr)
 
 wordpress rest api from https://okbbbb.com

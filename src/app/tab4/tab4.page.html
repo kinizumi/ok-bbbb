@@ -1,10 +1,9 @@
 <ion-header>
-  <ion-toolbar color="warning">
+  <ion-toolbar color="primary">
     <ion-button (click)="goBack()" slot="start">
       <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
-    <ion-title>
-      {{capitalizeFirstLetter(categoryName)}}
+    <ion-title [innerHTML]="capitalizeFirstLetter(categoryName)">
     </ion-title>
   </ion-toolbar>
 </ion-header>

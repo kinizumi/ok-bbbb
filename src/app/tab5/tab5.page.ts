@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {WordpressService} from '../services/wordpress.service';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
@@ -13,6 +13,7 @@ export class Tab5Page implements OnInit {
   content;
   title;
   loading;
+  @ViewChild('logos') logos: ElementRef;
 
   constructor(private wordpressService: WordpressService,
               private location: Location,
@@ -26,9 +27,25 @@ export class Tab5Page implements OnInit {
       this.content = data.content.rendered;
       this.title = data.title.rendered;
       this.loading = false;
+      this.floatLogos();
     }, err => {
       this.loading = false;
     });
+  }
+
+  floatLogos(){
+    setTimeout(() => {
+      const el = [...this.logos.nativeElement.getElementsByClassName('logos-wrapper')];
+      if (el) {
+        for (const i of el) {
+          if (i) {
+            i.style.display = 'flex';
+            i.style.flexDirection = 'row';
+            i.style.flexWrap = 'wrap';
+          }
+        }
+      }
+    }, 700);
   }
 
   goBack() {

@@ -1,10 +1,9 @@
 <ion-header>
-  <ion-toolbar color="warning">
+  <ion-toolbar color="primary">
     <ion-button (click)="goBack()" slot="start">
       <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
-    <ion-title>
-      {{title}}
+    <ion-title [innerHTML]="title">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,7 +11,7 @@
   <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
   <ion-card style="width:100%">
     <ion-card-content>
-      <div [innerHTML]="content"></div>
+      <div [innerHTML]="content" #logos></div>
     </ion-card-content>
   </ion-card>
 </ion-content>

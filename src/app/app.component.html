@@ -3,7 +3,7 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="menu-list">
-          <ion-list-header>Side Menu</ion-list-header>
+          <ion-list-header><img src="./assets/icon/favicon.png" /></ion-list-header>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" (mouseup)="navi(p.url)" lines="none"
                       detail="false" [class.selected]="selectedIndex == i">
